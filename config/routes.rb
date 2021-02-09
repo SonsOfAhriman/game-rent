@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :games, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:show, :new, :create]
+    resources :bookings, only: [:index, :show, :new, :create]
   end
 end
