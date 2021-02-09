@@ -10,16 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_02_06_093041) do
-=======
-ActiveRecord::Schema.define(version: 2021_02_06_054346) do
->>>>>>> 3360b77267ee53db7aa3b7c1d4e7eef72020cd6c
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "bookings", force: :cascade do |t|
     t.date "booking_start"
     t.date "booking_end"
@@ -42,8 +37,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_054346) do
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
-=======
->>>>>>> 3360b77267ee53db7aa3b7c1d4e7eef72020cd6c
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,18 +45,12 @@ ActiveRecord::Schema.define(version: 2021_02_06_054346) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
     t.string "username"
-=======
->>>>>>> 3360b77267ee53db7aa3b7c1d4e7eef72020cd6c
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key "bookings", "games"
   add_foreign_key "bookings", "users"
   add_foreign_key "games", "users"
-=======
->>>>>>> 3360b77267ee53db7aa3b7c1d4e7eef72020cd6c
 end
