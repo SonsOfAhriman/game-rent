@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2">
+      <h1>Games</h1>
+      <% @games.each do |game| %>
+        <h3><%= game.title %></h3>
+        <p>Game description: <%= game.description %></p>
+        <p>Game availability: <%= game.availability %></p>
+        <p>Game Owner: <%= game.user.username %></p>
+        <% game.bookings.each do |booking| %>
+          <p>Booking start date: <%= booking.booking_start %> </p>
+          <p>Booking approved? <%= booking.approved %> </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
