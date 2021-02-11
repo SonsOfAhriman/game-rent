@@ -1,4 +1,7 @@
 <h1><%= @game.title %></h1>
+<% if @game.photo.attached? %>
+  <img src="<%= cloudinary_url(@game.photo.key)%>">
+<% end %>
 <p>Game description: <%= @game.description %></p>
 <p>Game availability: <%= @game.availability %></p>
 <p>Game Owner: <%= @game.user.username %></p>
