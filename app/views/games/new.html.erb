@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Add a Game</h1>
+
+  <%= simple_form_for(@game) do |f| %>
+    <div class="actions form-group">
+      <%= f.input :title, class: "form-control" %>
+      <%= f.input :description, class: "form-control" %>
+      <%= f.input :availability, class: "form-control" %>
+      <%= f.input :photo, as: :file  %>
+
+
+      <%= f.submit class: 'btn margin-top btn-primary' %>
+    </div>
+  <% end %>
+
+</div>
