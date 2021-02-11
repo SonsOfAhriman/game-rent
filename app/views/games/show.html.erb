@@ -1,2 +1,8 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<h1><%= @game.title %></h1>
+<p>Game description: <%= @game.description %></p>
+<p>Game availability: <%= @game.availability %></p>
+<p>Game Owner: <%= @game.user.username %></p>
+<% @game.bookings.each do |booking| %>
+  <p>Booking start date: <%= booking.booking_start %> </p>
+  <p>Booking approved? <%= booking.approved %> </p>
+<% end %>
