@@ -7,7 +7,6 @@ class GamePolicy < ApplicationPolicy
     true
   end
 
-
   class Scope < Scope
     def resolve
       scope.all

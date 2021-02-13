@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Book this game</h1>
+
+  <%= simple_form_for [ @game, @booking ] do |f| %>
+    <div class="actions form-group">
+      <%= f.input :booking_start, class: "form-control" %>
+      <%= f.input :booking_end, class: "form-control" %>
+
+      <%= f.submit class: 'btn margin-top btn-primary' %>
+    </div>
+  <% end %>
+
+</div>

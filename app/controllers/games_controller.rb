@@ -1,4 +1,7 @@
 class GamesController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @games = policy_scope(Game)
     @search = params["title"]

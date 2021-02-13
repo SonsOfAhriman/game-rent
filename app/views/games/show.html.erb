@@ -1,16 +1,19 @@
 <div class="card-product">
- <h1><%= @game.title %></h1>
+  <h1><%= @game.title %></h1>
   <% if @game.photo.attached? %>
     <img src="<%= cloudinary_url(@game.photo.key)%>">
   <% end %>
   <div class="card-product-infos">
+
     <p>Game description: <%= @game.description %></p>
     <p>Game availability: <%= @game.availability %></p>
     <p>Game Owner: <%= @game.user.username %></p>
-    <% @game.bookings.each do |booking| %>
-      <p>Booking start date: <%= booking.booking_start %> </p>
-      <p>Booking approved? <%= booking.approved %> </p>
+    <% if current_user != @game.user %>
+      <h3><%= link_to "Rent this game", new_game_booking_path(@game) %></h3>
     <% end %>
-  </div>
-
-</div>
+    <h3> - Current bookings - </h3>
+    <% @game.bookings.each do |booking| %>
+      <p>Booked by: <%= booking.user.username %> </p>
+      <p>Booking start date: <%= booking.booking_start %> </p>
+      <p>Booking end date: <%= booking.booking_end %> </p>
+    <% end %>
