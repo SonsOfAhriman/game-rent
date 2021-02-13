@@ -10,10 +10,6 @@
         <p>Game description: <%= game.description %></p>
         <p>Game availability: <%= game.availability %></p>
         <p>Game Owner: <%= game.user.username %></p>
-        <% game.bookings.each do |booking| %>
-          <p>Booking start date: <%= booking.booking_start %> </p>
-          <p>Booking approved? <%= booking.approved %> </p>
-        <% end %>
       <% end %>
     </div>
   </div>

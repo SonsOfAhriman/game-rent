@@ -5,7 +5,12 @@
 <p>Game description: <%= @game.description %></p>
 <p>Game availability: <%= @game.availability %></p>
 <p>Game Owner: <%= @game.user.username %></p>
+<% if current_user != @game.user %>
+  <h3><%= link_to "Rent this game", new_game_booking_path(@game) %></h3>
+<% end %>
+<h3> - Current bookings - </h3>
 <% @game.bookings.each do |booking| %>
+  <p>Booked by: <%= booking.user.username %> </p>
   <p>Booking start date: <%= booking.booking_start %> </p>
-  <p>Booking approved? <%= booking.approved %> </p>
+  <p>Booking end date: <%= booking.booking_end %> </p>
 <% end %>

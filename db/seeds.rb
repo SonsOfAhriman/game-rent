@@ -62,14 +62,5 @@ first.user = kristina
 first.game = crawl
 first.save
 
-second = Booking.new(booking_start: "2021/03/15", booking_end: "2021/03/16", approved: true)
-second.user = ryan
-second.game = battle_bots
-second.save
-
-third = Booking.new(booking_start: "2021/04/15", booking_end: "2021/04/16", approved: false)
-third.user = ade
-third.game = knockout
-third.save
 
 puts "Seeding finished"
