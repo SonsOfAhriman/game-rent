@@ -3,17 +3,11 @@
     <div class="col-xs-12 col-sm-8 offset-sm-2">
       <h1>Games</h1>
       <% @games.each do |game| %>
-        <h3><%= link_to(game.title, game_path(game)) %></h3>
-        <% if game.photo.attached? %>
-          <img src="<%= cloudinary_url(game.photo.key)%>">
-        <% end %>
-        <p>Game description: <%= game.description %></p>
-        <p>Game availability: <%= game.availability %></p>
-        <p>Game Owner: <%= game.user.username %></p>
-        <% game.bookings.each do |booking| %>
-          <p>Booking start date: <%= booking.booking_start %> </p>
-          <p>Booking approved? <%= booking.approved %> </p>
-        <% end %>
+        <%#= render partial: 'shared/card', locals: {game: game} %>
+        <% @img = game.photo.attached? ? game.photo.key : false %>
+        <% @card_title = link_to(game.title, game_path(game)) %>
+        <% @card_description = game.description %>
+        <%= render 'shared/card' %>
       <% end %>
     </div>
   </div>
