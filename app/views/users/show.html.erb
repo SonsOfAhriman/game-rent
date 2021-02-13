@@ -6,11 +6,11 @@
         <p><%= game.title  %></p>
         <p><%= game.description  %></p>
       <% end %>
-
    <h3>My Bookings ⭐️ </h3>
     <% @user.bookings.each do |booking| %>
       <p> <%= booking.game.title %> </p>
       <p> <%= booking.booking_start %> : <%= booking.booking_end %> </p>
     <% end %>
+  <%= link_to "Add my avatar pic", edit_user_path(@user) %>
  </div>
 </div>
