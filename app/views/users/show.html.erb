@@ -1,4 +1,4 @@
-<div class="col-6">
+<div class="col-6" style="margin-bottom: 100px">
   <div class="text-center border border-primary">
     <h1> <%= @user.username %> </h1>
     <h3>🎮 My Games 🎮 </h3>
@@ -14,7 +14,7 @@
    <h3>My Bookings ⭐️ </h3>
     <% @user.bookings.each do |booking| %>
     <% @img = cloudinary_url(booking.game.photo.key) %>
-        <% @card_title = link_to(booking.game.title, game_bookings_path(booking.game)) %>
+        <% @card_title = link_to(booking.game.title, game_path(booking.game)) %>
         <% @card_description = booking.game.description %>
         <% @card_owner = booking.game.user.username %>
         <%= render 'shared/card' %>
