@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     @game.bookings.each do |booking|
-      if @booking.booking_start != booking.booking_start || @booking.booking_end != booking.booking_end
+      if @booking.booking_start < booking.booking_start && @booking.booking_end < booking.booking_start || @booking.booking_start  > booking.booking_end
         true
       else
         return render :new
