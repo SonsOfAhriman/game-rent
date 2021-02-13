@@ -1,6 +1,6 @@
 <div class="card-product">
   <%#= game.photo.attached? ? (cl_image_tag game.photo.key) : false %>
-  <%= cl_image_tag(@img) %>
+  <img src="<%= @img %>" >
   <div class="card-product-infos">
     <h2><%= @card_title %></h2>
     <p><%= @card_description %></p>
