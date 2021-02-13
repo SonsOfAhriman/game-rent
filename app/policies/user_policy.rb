@@ -1,14 +1,14 @@
-class GamePolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   def show?
-    true
+    if @user == record
+      true
+    else
+      false
+    end
   end
 
-  def create?
-    true
-  end
-
-  def destroy?
-    if @user == record.user
+  def update?
+    if @user == record
       true
     else
       false
