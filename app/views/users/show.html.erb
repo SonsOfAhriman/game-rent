@@ -3,8 +3,9 @@
     <h1> <%= @user.username %> </h1>
     <h3>🎮 My Games 🎮 </h3>
       <% @user.games.each do |game| %>
-        <p><%= game.title  %></p>
-        <p><%= game.description  %></p>
+        <h4>Title: <%= game.title  %></h4>
+        <p>Description: <%= game.description  %></p>
+        <p> <%= link_to "Delete this game posting", game_path(game), data: { method: :delete, confirm: "Are you sure?" }  %> </p>
       <% end %>
    <h3>My Bookings ⭐️ </h3>
     <% @user.bookings.each do |booking| %>
