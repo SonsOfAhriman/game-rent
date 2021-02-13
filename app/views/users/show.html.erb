@@ -1,0 +1,12 @@
+<h1> <%= @user.username  %> </h1>
+<h3>My Games</h3>
+<% @user.games.each do |game| %>
+  <p><%= game.title  %></p>
+  <p><%= game.description  %></p>
+<% end %>
+
+<h3>My Bookings</h3>
+<% @user.bookings.each do |booking| %>
+  <p> <%= booking.game.title %> </p>
+  <p> <%= booking.booking_start  %> : <%= booking.booking_end  %> </p>
+<% end %>
