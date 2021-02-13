@@ -29,17 +29,16 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  # username: postgres
+  username: postgres
 
-  # # The password associated with the postgres role (username).
-  # password: Ryanh856
+  # The password associated with the postgres role (username).
+  password: Ryanh856
 
 
-  # host: localhost
+  host: localhost
 
-  # The TCP port the server listens on. Defaults to 5432.
-  # If your server runs on a different port number, change accordingly.
-  # port: 5432
+
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
