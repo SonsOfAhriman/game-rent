@@ -1,12 +1,54 @@
 // Specific CSS for your home-page
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 16px;
+
+.body {
+  padding: 20px;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+  background-blend-mode: multiply,multiply;
 }
 
-.container {
 
+#img {
+  width: 200px;
+  height: 100px;
+}
 
- }
+#img2 {
+  width: 400px;
+  height: auto;
+}
+
+.small_box {
+  width: 400px;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+  margin: 0px auto;
+  border: 2px solid $white;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0, .1)
+}
+
+.small_box2 {
+  width: 650px;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+  margin: 0px auto;
+  border: 2px solid $white;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0, .1)
+}
+
+.card-games {
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.margin {
+  padding: 50px;
+  margin: 30px;
+}
