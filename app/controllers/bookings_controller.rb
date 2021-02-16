@@ -25,13 +25,11 @@ class BookingsController < ApplicationController
 
     @game.bookings.each do |booking|
       if @booking.booking_start < booking.booking_start && @booking.booking_end < booking.booking_start || @booking.booking_start  > booking.booking_end
-        true
+        @booking.save
       else
-        return render :new
+        break
       end
     end
-
-    @booking.save
 
     redirect_to game_path(@game)
   end
