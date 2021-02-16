@@ -3,12 +3,16 @@ class GamesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+
     @games = policy_scope(Game)
     @search = params["title"]
+    @title = @search["item"]
 
-    if @search.present?
-      @title = @search["item"]
-      @games = Game.where("title ILIKE ?", "%#{@title}%")
+    if @title.present?
+
+      @games = Game.search_by_title_and_description(@title)
+    else
+      @games = Game.all
     end
   end
 
