@@ -2,17 +2,17 @@
   color: $white;
   background-color: $red;
   border-color: none;
+  &:hover {
+    color: $red;
+    background-color: $white;
+    border-color: $red;
+  }
 }
 
 a {
   text-decoration: none;
   color: $white;
-}
-
-.nav-link {
-  padding: 0;
-}
-
-.navbar li {
-  list-style: none;
+  &:hover {
+    color: $red;
+  }
 }
