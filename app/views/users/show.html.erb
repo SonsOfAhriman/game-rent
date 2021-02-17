@@ -3,7 +3,7 @@
     <h1> <%= @user.username %> </h1>
     <h3>🎮 My Games 🎮 </h3>
       <% @user.games.each do |game| %>
-        <% @img = cloudinary_url(game.photo.key) %>
+        <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>
         <% @card_title = link_to(game.title, game_path(game)) %>
         <% @card_description = game.description %>
         <% @card_owner = game.user.username %>
