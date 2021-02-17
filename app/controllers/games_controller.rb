@@ -5,12 +5,17 @@ class GamesController < ApplicationController
   def index
 
     @games = policy_scope(Game)
-    @search = params["title"]
-    @title = @search["item"]
 
-    if @title.present?
+    if params["title"].present?
+      @search = params["title"]
+      @title = @search["item"]
 
-      @games = Game.search_by_title_and_description(@title)
+      if @title.present?
+
+        @games = Game.search_by_title_and_description(@title)
+      else
+        @games = Game.all
+      end
     else
       @games = Game.all
     end
