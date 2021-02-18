@@ -1,1 +1,16 @@
-<div class="container">  <div class="row">    <div class="col-xs-12 col-sm-8 offset-sm-2">      <h1>Games</h1>      <% @games.each do |game| %>        <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>        <% @card_title = link_to(game.title, game_path(game)) %>        <% @card_description = game.description %>        <% @card_owner = game.user.username %>        <%= render 'shared/card' %>      <% end %>    </div>  </div></div>
+<div class="container index">
+  <div class="col-xs-auto">
+    <h1>Games</h1>
+    <div class="row col-xs-12">
+      <% @games.each do |game| %>
+      <div class="col col-xs-12 col-sm-8 col-md-4">
+        <% @img = cloudinary_url(game.photo.key) %>
+        <% @card_title = link_to(game.title, game_path(game)) %>
+        <% @card_description = game.description %>
+        <% @card_owner = game.user.username %>
+        <%= render 'shared/card' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
