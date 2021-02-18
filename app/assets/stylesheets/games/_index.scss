@@ -1,3 +1,10 @@
 .index {
   display: grid;
+  a{
+    color: $gray !important;
+    &:hover{
+      text-decoration: none;
+      color: $red !important;
+    }
+  }
 }

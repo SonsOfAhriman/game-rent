@@ -30,4 +30,11 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  overflow: hidden;
+  .truncated {
+    // flex: 1;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
