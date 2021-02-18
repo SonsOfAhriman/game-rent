@@ -5,16 +5,22 @@
 <div class="container">
   <div class="d-flex flex-row">
     <div class="col-xl">
-      <div class="d-inline-flex p-1 col-6">
+      <div class="d-inline-flex p-1 col-5">
         <div>
           <h2>Game description:</h2>
           <p><%= @game.description %></p>
         </div>
       </div>
-      <div class="d-inline-flex p-2 col-auto">
+      <div class="d-inline-flex p-2 col-4">
         <div>
           <h2>Game Owner:</h2>
           <p><%= @game.user.username %></p>
+        </div>
+      </div>
+      <div class="d-inline-flex p-3 col-auto">
+        <div>
+          <h2>City:</h2>
+          <p><%= @game.address %></p>
         </div>
       </div>
       <!-- <h2>Game availability:</h2>
