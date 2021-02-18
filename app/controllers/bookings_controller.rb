@@ -25,16 +25,22 @@ class BookingsController < ApplicationController
 
     @count = 0
 
-    @game.bookings.each do |booking|
-      if @booking.booking_start < booking.booking_start && @booking.booking_end < booking.booking_start || @booking.booking_start  > booking.booking_end
-        true
-        @count += 1
-        if @count == @game.bookings.length
-          @booking.save
+
+    if @game.bookings.present?
+
+      @game.bookings.each do |booking|
+        if @booking.booking_start < booking.booking_start && @booking.booking_end < booking.booking_start || @booking.booking_start  > booking.booking_end
+          true
+          @count += 1
+          if @count == @game.bookings.length
+            @booking.save
+          end
+        else
+          break
         end
-      else
-        break
       end
+    else
+      @booking.save
     end
 
     redirect_to game_path(@game)
