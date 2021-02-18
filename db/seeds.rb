@@ -28,7 +28,7 @@ kristina.save
 
 file = URI.open('https://images.yaoota.com/ENEQfv7DWCYoOmlYDsVqdinB--M=/trim/yaootaweb-production-ng/media/crawledproductimages/8f9fb577200b18566065b5722274b14daf5cb00f.jpg')
 
-crawl = Game.new(title: "Dungeon Crawl", description: "Hardest game on the planet", availability: true)
+crawl = Game.new(title: "Dungeon Crawl", description: "Hardest game on the planet", availability: true, address: "Seoul, Hongdae")
 
 crawl.user = ryan
 
@@ -39,7 +39,7 @@ crawl.save
 file_two = URI.open('https://images.yaoota.com/ENEQfv7DWCYoOmlYDsVqdinB--M=/trim/yaootaweb-production-ng/media/crawledproductimages/8f9fb577200b18566065b5722274b14daf5cb00f.jpg')
 
 
-knockout = Game.new(title: "Knock Out", description: "Get them!", availability: true)
+knockout = Game.new(title: "Knock Out", description: "Get them!", availability: true, address: "Seoul, City Hall")
 knockout.user = ade
 
 knockout.photo.attach(io: file_two, filename: 'game', content_type: 'image/jpeg')
@@ -50,7 +50,7 @@ knockout.save
 file_three = URI.open('https://images.yaoota.com/ENEQfv7DWCYoOmlYDsVqdinB--M=/trim/yaootaweb-production-ng/media/crawledproductimages/8f9fb577200b18566065b5722274b14daf5cb00f.jpg')
 
 
-battle_bots = Game.new(title: "Battle Bots", description: "Save the planet from the evil robots", availability: true)
+battle_bots = Game.new(title: "Battle Bots", description: "Save the planet from the evil robots", availability: true, address: "Seoul, Itaewon")
 battle_bots.user = lena
 
 battle_bots.photo.attach(io: file_three, filename: 'game', content_type: 'image/jpeg')
