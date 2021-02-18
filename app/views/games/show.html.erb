@@ -1,37 +1,40 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cloudinary_url(@game.photo.key)%>)">
-  <h1><%= @game.title %></h1>
-</div>
-<div class="card-product-infos">
-<div class="container">
-  <div class="d-flex flex-row">
-    <div class="col-xl">
-      <div class="d-inline-flex p-1 col-6">
+ <div id="contentholder">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cloudinary_url(@game.photo.key)%>)">
+    <h1><%= @game.title %></h1>
+  </div>
+  <div class="card-product-infos">
+  <div class="container">
+    <div class="d-flex flex-row">
+      <div class="col-xl">
+        <div class="d-inline-flex p-2 col-auto">
+          <div>
+            <h4 style="color:brown;">Game Owner:</h4>
+            <p><%= @game.user.username %></p>
+            <% if current_user != @game.user %>
+              <button class="btn btn-outline-danger" data-mdb-ripple-color="dark" type="submit"><%= link_to "Rent this game", new_game_booking_path(@game) %></button>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-inline-flex p-1 col-7">
+          <div>
+            <h4 style="color:brown;">Game description:</h4>
+            <p><%= @game.description %></p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </div>
+        <!-- <h2>Game availability:</h2>
+        <p><%= @game.availability %></p> -->
+
         <div>
-          <h2>Game description:</h2>
-          <p><%= @game.description %></p>
+          <h3 style="color:brown;"> - Current bookings - </h3>
+          <% @game.bookings.each do |booking| %>
+            <p>Booked by: <%= booking.user.username %> </p>
+            <p>Booked from: <%= booking.booking_start %> </p>
+            <p>Booked till: <%= booking.booking_end %> </p>
+          <% end %>
         </div>
       </div>
-      <div class="d-inline-flex p-2 col-auto">
-        <div>
-          <h2>Game Owner:</h2>
-          <p><%= @game.user.username %></p>
-        </div>
-      </div>
-      <!-- <h2>Game availability:</h2>
-      <p><%= @game.availability %></p> -->
-      <div>
-        <% if current_user != @game.user %>
-          <button class="btn btn-outline-primary" type="submit"><%= link_to "Rent this game", new_game_booking_path(@game) %></button>
-        <% end %>
-      </div>
-      <br>
-      <h3> - Current bookings - </h3>
-      <% @game.bookings.each do |booking| %>
-        <p>Booked by: <%= booking.user.username %> </p>
-        <p>Booking start date: <%= booking.booking_start %> </p>
-        <p>Booking end date: <%= booking.booking_end %> </p>
-      <% end %>
     </div>
   </div>
-</div>
+  </div>
 </div>

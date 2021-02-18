@@ -1,7 +1,8 @@
 .card-category {
+  width: 100;
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 478px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,3 +13,12 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.d-inline-flex.p-1.col-7 {
+  left: 15%;
+}
+
+.container {
+  background-color: #F2F2F2;
+}
+
