@@ -6,7 +6,7 @@
       <div class="col col-xs-12 col-sm-8 col-md-4">
         <% @img = cloudinary_url(game.photo.key) %>
         <% @card_title = link_to(game.title, game_path(game)) %>
-        <%= @card_address = game.address %>
+        <% @card_address = game.address %>
         <% @card_description = game.description %>
         <% @card_owner = game.user.username %>
         <%= render 'shared/card' %>
