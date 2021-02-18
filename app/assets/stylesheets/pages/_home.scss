@@ -1,11 +1,33 @@
 // Specific CSS for your home-page
-.container {
-  width: 100% !important;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898 !important;
-  background-blend-mode: multiply,multiply;
+h1{
+  font-size: 42px;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 2em;
 }
 
-.body {
+.home {
+  display: grid;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 1em;
+}
+
+.main {
   padding: 20px;
   width: 100% !important;
   margin: 0 auto;
@@ -15,43 +37,30 @@
   background-blend-mode: multiply,multiply;
 }
 
-
-#img {
-  width: 200px;
-  height: 100px;
+// img
+img {
+  width: 370px;
+  height: 220px;
+  border-radius: 5px;
 }
 
-#img2 {
-  width: 400px;
-  height: auto;
-}
 
 .small_box {
-  width: 400px;
+  width: fit-content;
   height: auto;
   text-align: center;
-  padding: 10px;
-  margin: 0px auto;
+  padding: 30px;
+  margin: 4em auto;
   border: 2px solid $white;
   border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0, .1)
-}
-
-.small_box2 {
-  width: 650px;
-  height: auto;
-  text-align: center;
-  padding: 10px;
-  margin: 0px auto;
-  border: 2px solid $white;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0, .1)
-}
-
-.card-games {
-  padding: 40px;
-  display: flex;
-  justify-content: space-between;
+  box-shadow: 0 10px 50px $light-gray;
+  a {
+    text-decoration: none;
+    color: $white !important;
+    &:hover {
+      color: $red !important;
+    }
+  }
 }
 
 .margin {

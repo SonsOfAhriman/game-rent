@@ -1,4 +1,10 @@
 .footer {
+  position: fixed;
+  height: XXX;
+  bottom: 0;
+  width: 100%;
+  margin-left: 1.5rem;
+  background-color: $white;
   .footer-links{
     color: $grey;
     &:hover{
