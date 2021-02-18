@@ -5,12 +5,17 @@ class GamesController < ApplicationController
   def index
 
     @games = policy_scope(Game)
-    @search = params["title"]
-    @title = @search["item"]
 
-    if @title.present?
+    if params["title"].present?
+      @search = params["title"]
+      @title = @search["item"]
 
-      @games = Game.search_by_title_and_description(@title)
+      if @title.present?
+
+        @games = Game.search_by_title_and_description(@title)
+      else
+        @games = Game.all
+      end
     else
       @games = Game.all
     end
@@ -20,6 +25,12 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     authorize @game
     @booking = @game.bookings.new
+
+    @marker = {
+        lat: @game.latitude,
+        lng: @game.longitude
+              }
+
   end
 
   def new
@@ -52,7 +63,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :availability, :photo)
+    params.require(:game).permit(:title, :description, :availability, :address, :photo)
   end
 
 end

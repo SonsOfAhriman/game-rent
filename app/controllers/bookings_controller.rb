@@ -23,9 +23,15 @@ class BookingsController < ApplicationController
 
     authorize @booking
 
+    @count = 0
+
     @game.bookings.each do |booking|
       if @booking.booking_start < booking.booking_start && @booking.booking_end < booking.booking_start || @booking.booking_start  > booking.booking_end
-        @booking.save
+        true
+        @count += 1
+        if @count == @game.bookings.length
+          @booking.save
+        end
       else
         break
       end
