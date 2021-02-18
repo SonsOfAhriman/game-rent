@@ -25,6 +25,12 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     authorize @game
     @booking = @game.bookings.new
+
+    @marker = {
+        lat: @game.latitude,
+        lng: @game.longitude
+              }
+
   end
 
   def new
@@ -57,7 +63,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :availability, :photo)
+    params.require(:game).permit(:title, :description, :availability, :address, :photo)
   end
 
 end
