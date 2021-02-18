@@ -1,26 +1,47 @@
-<div class="col-6" style="margin-bottom: 100px">
-  <div class="text-center border border-primary">
-    <h1> <%= @user.username %> </h1>
-    <h3>🎮 My Games 🎮 </h3>
-      <% @user.games.each do |game| %>
-        <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>
-        <% @card_title = link_to(game.title, game_path(game)) %>
-        <% @card_description = game.description %>
-        <% @card_owner = game.user.username %>
-        <%= render 'shared/card' %>
-        <p> <%= link_to "Delete this game posting", game_path(game), data: { method: :delete, confirm: "Are you sure?" }  %> </p>
-      <% end %>
 
-   <h3>My Bookings ⭐️ </h3>
-    <% @user.bookings.each do |booking| %>
-    <% @img = cloudinary_url(booking.game.photo.key) %>
-        <% @card_title = link_to(booking.game.title, game_path(booking.game)) %>
-        <% @card_description = booking.game.description %>
-        <% @card_owner = booking.game.user.username %>
-        <%= render 'shared/card' %>
-      <p> <%= booking.booking_start %> : <%= booking.booking_end %> </p>
-    <% end %>
- </div>
- <%= link_to "Add/edit my avatar pic", edit_user_path(@user) %>
+<div class="container" style="margin-left: 150px">
+  <div class="user-dashboard">
+    <h1> Hello, <%= @user.username %> </h1>
+
+    <button style="margin-bottom: 20px" type="button" class="btn btn-sm"><%= link_to "Add/edit my avatar pic", edit_user_path(@user) %></button>
+
+    <div class="row" style="padding-top: 20px">
+        <div class="col-md-5 col-sm-5 col-xs-12 gutter">
+
+            <div class="dashboard">
+                <h3 style="padding-bottom: 20px"> 🎮 My Games 🎮 </h3>
+                  <% @user.games.each do |game| %>
+                    <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>
+                    <% @card_title = link_to(game.title, game_path(game)) %>
+                    <% @card_description = game.description %>
+                    <% @card_owner = game.user.username %>
+                    <%= render 'shared/card' %>
+                    <button type="button" class="btn btn-sm"><%= link_to "Delete this game posting", game_path(game), data: { method: :delete, confirm: "Are you sure?" }  %> </button>
+                    <hr>
+
+                  <% end %>
+            </div>
+
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-12 gutter">
+
+            <div class="dashboard">
+                <h3 style="padding-bottom: 20px"> ⭐️ My Rented Games ⭐️ </h3>
+                <% @user.bookings.each do |booking| %>
+                  <% @img = cloudinary_url(booking.game.photo.key) %>
+                  <% @card_title = link_to(booking.game.title, game_path(booking.game)) %>
+                  <% @card_description = booking.game.description %>
+                  <% @card_owner = booking.game.user.username %>
+                  <%= render 'shared/card' %>
+                  <p> <strong>Rent period: </strong>  <%= booking.booking_start %> : <%= booking.booking_end %> </p>
+                  <hr>
+                <% end %>
+            </div>
+        </div>
+    </div>
+  </div>
 
 </div>
+
+
+
