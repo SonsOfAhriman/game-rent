@@ -13,11 +13,12 @@
     line-height:1.6;
     margin-bottom:0;
       a {
-      color:inherit;
+      color:$white !important;
       text-decoration:none;
       opacity:0.8;
       &:hover {
         opacity:1;
+        text-decoration:none;
       }
     }
   }
@@ -32,6 +33,7 @@
     text-align:center;
     padding-bottom:25px;
     a {
+      color:$white !important;
       font-size:24px;
       width:40px;
       height:40px;
@@ -45,6 +47,7 @@
       opacity:0.75;
       &:hover {
         opacity:0.9;
+        color:$white !important;
       }
     }
   }
