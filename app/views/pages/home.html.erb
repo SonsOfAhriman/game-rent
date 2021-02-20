@@ -8,105 +8,109 @@
     </div>
   </div>
 
-  <div class="card-games">
-    <div class="row col-xs-12 col-lg-12">
-      <div class="col col-xs-12 col-sm-6 col-md-3">
-        <div>
-          <img class="homimg" src= "https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg" />
-        </div>
-        <div>
-          <p><strong>Super fun games</strong></p>
-        </div>
+  <div class="row col-xs-12 col-lg-12 d-flex justify-content-between mx-auto">
+    <div class="p-2 col col-xs-12 col-sm-6 col-md-4">
+      <div>
+        <img class="homimg" src= "https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg" />
       </div>
-      <div class="col col-xs-12 col-sm-6 col-md-3">
-        <div>
-          <img class="homimg" src="https://images.pexels.com/photos/209728/pexels-photo-209728.jpeg" />
-        </div>
-        <div>
-          <p><strong>Shared by fellow gamers</strong></p>
-        </div>
+      <div>
+        <p><strong>Super fun games</strong></p>
       </div>
-      <div class="col col-xs-12 col-sm-6 col-md-3">
-        <div>
-          <img class="homimg" src="https://cdn.pixabay.com/photo/2020/02/14/18/23/approval-4849109_1280.jpg" />
-        </div>
-        <div>
-          <p><strong>User-friendly</strong></p>
-        </div>
+    </div>
+    <div class="p-2 col col-xs-12 col-sm-6 col-md-4">
+      <div>
+        <img class="homimg" src="https://images.pexels.com/photos/209728/pexels-photo-209728.jpeg" />
       </div>
-      <div class="col col-xs-12 col-sm-8 col-md-auto">
-        <div>
-          <img class="homimg" src="https://cdn.pixabay.com/photo/2017/04/09/12/00/gaming-2215601_1280.jpg" />
-        </div>
-        <div>
-          <p><strong>Cross-platform</strong></p>
-        </div>
+      <div>
+        <p><strong>Shared by fellow gamers</strong></p>
+      </div>
+    </div>
+    <div class="p-2 col col-xs-12 col-sm-6 col-md-4">
+      <div>
+        <img class="homimg" src="https://cdn.pixabay.com/photo/2020/02/14/18/23/approval-4849109_1280.jpg" />
+      </div>
+      <div>
+        <p><strong>User-friendly</strong></p>
+      </div>
+    </div>
+    <div class="col col-xs-12 col-sm-12 col-md-12">
+      <div>
+        <img class="homimg" src="https://cdn.pixabay.com/photo/2017/04/09/12/00/gaming-2215601_1280.jpg" />
+      </div>
+      <div>
+        <p><strong>Cross-platform</strong></p>
       </div>
     </div>
   </div>
 
-    <div class="row">
-    <div class="small_box">
-      <div class="text-center">
-        <h3><strong>What you have access to</strong></h3>
-        <p>+10,000 games</p>
-        <p>+398 users' posts and recommendations</p>
-        <p>Games near <strong>you</strong></p>
-      </div>
+  <div class="row align-items-center h-100">
+    <div class="small_box my-auto">
+
+      <h3><strong>What you have access to</strong></h3>
+      <p>+10,000 games</p>
+      <p>+398 users' posts and recommendations</p>
+      <p>Games near <strong>you</strong></p>
+
     </div>
-    <div class="small_box">
-    <% if user_signed_in? %>
-      <p>Feel free to checkout the</p>
-      <button class="btn"><a href="#">Dashboard</a></button>
-      <button class="btn"><a href="#">Games</a></button>
-    <% else %>
-      <div class="text-center">
-        <h3>
-          <p>You haven't joined Game Rent yet?</p>
-          <p>Start today!</p>
-        </h3>
+      <div class="small_box justify-content-center align-self-center my-auto">
+        <% if user_signed_in? %>
+          <h3>
+            <button class="btn"><a href="#"><%= link_to "Dashboard", user_path(current_user), class: "nav-link nbtn" %></a></button>
+            <button class="btn"><a href="#"><%= link_to "See all Games", games_path, class: "nav-link" %></a></button>
+            <p style="margin-top: 25px;" >Feel free to checkout our large selection of games</p>
+          </h3>
+
+        <% else %>
+          <h3>
+            <p>You haven't joined Game Rent yet?</p>
+            <p>Start today!</p>
+          </h3>
+          <div><%= link_to "Sign up", new_user_registration_path, class: "btn" %></div>
+          <%#= link_to "Log in", new_user_session_path, class: "btn" %>
+        <% end %>
       </div>
-      <div><%= link_to "Sign up", new_user_registration_path, class: "btn" %></div>
-      <%#= link_to "Log in", new_user_session_path, class: "btn" %>
-    <% end %>
     </div>
   </div>
 
-  <div class="home">
-    <div class="col-xs-auto">
-      <div class="row col-xs-12">
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-3">
+  <div class="bottom">
+
+    <div class="row col-xs-12 col-lg-12 d-flex justify-content-between mx-auto">
+
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
         <img class="homimg" src= "https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613474356/2_3_gluvh3.jpg" />
       </div>
-
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-3">
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
         <img class="homimg" src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613474356/2_4_x2ghxi.jpg" />
       </div>
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-3">
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
         <img class="homimg" src= "https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613474356/2_1_qqct4z.jpg" />
       </div>
 
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-auto">
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
         <img class="homimg" src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613474356/2_2_yspaj5.jpg" />
       </div>
-
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-3">
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
           <img class="homimg" src= "https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613471812/1_beyhaz.png" />
       </div>
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-3">
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
           <img class="homimg" src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613472432/2_adpne2.png" />
       </div>
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-3">
-          <img class="homimg" src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613472433/3_x71keo.png" />
+
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
+        <img class="homimg" src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613472433/3_x71keo.png" />
       </div>
-      <div class="p-3 col col-xs-12 col-sm-6 col-md-auto">
-          <img class="homimg" src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613472433/4_zy1yx8.png" />
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
+        <img class="homimg" src="https://res.cloudinary.com/dsgl1xjqn/image/upload/v1613472433/4_zy1yx8.png" />
       </div>
+      <div class="p-3 col col-xs-12 col-sm-6 col-md-4">
+        <img class="homimg" src="https://data4.origin.com/asset/content/dam/originx/web/app/programs/About/aboutorigin_3840x2160_battlefield1.jpg/27051ac9-d3c0-49e3-9979-3dc1058a69f5/original.jpg" />
+      </div>
+
     </div>
-    </div>
+
   </div>
-  <div class="margin"></div>
-</div>
+
+
 
 
 
