@@ -2,7 +2,6 @@
 <div class="container">
     <div class="user-dashboard">
       <div class="d-flex space-between">
-
           <div class="col-md-6 col-sm-6 col-xs-12">
             <h1> <strong>Hello, <%= @user.username %></strong> </h1>
             <button style="margin-bottom: 20px" type="button" class="btn btn-sm"><%= link_to "Add/edit my avatar pic", edit_user_path(@user) %></button>
@@ -11,31 +10,24 @@
             <h2><strong><u>My Login Details</u></strong></h2>
             <h3><%= @user.email %> </h3>
           </div>
-
       </div>
-
-
       <hr>
       <div class="row" style="padding-top: 20px">
-          <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-6 col-sm-6 col-xs-12 my-games">
+            <div class="dashboard text-left">
+                <h3 style="padding-bottom: 20px">My Games</h3>
+                  <% @user.games.each do |game| %>
+                    <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>                      <% @card_title = link_to(game.title, game_path(game)) %>
+                    <% @card_description = game.description %>
+                    <% @card_owner = game.user.username %>
+                    <%= render 'shared/card' %>
+                    <button type="button" class="btn btn-sm"><%= link_to "Delete this game posting", game_path(game), data: { method: :delete, confirm: "Are you sure?" }  %> </button>
+                    <hr>
 
-              <div class="dashboard text-left">
-                  <h3 style="padding-bottom: 20px">My Games</h3>
-                    <% @user.games.each do |game| %>
-                      <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>
-                      <% @card_title = link_to(game.title, game_path(game)) %>
-                      <% @card_description = game.description %>
-                      <% @card_owner = game.user.username %>
-                      <%= render 'shared/card' %>
-                      <button type="button" class="btn btn-sm"><%= link_to "Delete this game posting", game_path(game), data: { method: :delete, confirm: "Are you sure?" }  %> </button>
-                      <hr>
-
-                    <% end %>
-              </div>
-
+                  <% end %>
+            </div>
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-12">
-
+          <div class="col-md-6 col-sm-6 col-xs-12 renting">
               <div class="dashboard text-right">
                 <h3 style="padding-bottom: 20px">Games I'm Renting</h3>
                 <% if @user.bookings.present? %>
