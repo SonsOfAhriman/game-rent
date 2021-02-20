@@ -5,11 +5,11 @@
 
     <button style="margin-bottom: 20px" type="button" class="btn btn-sm"><%= link_to "Add/edit my avatar pic", edit_user_path(@user) %></button>
 
-    <div class="row" style="padding-top: 20px">
-        <div class="col-md-5 col-sm-5 col-xs-12 gutter">
+    <div class="row space-between" style="padding-top: 20px">
+        <div class="col-md-6 col-sm-6 col-xs-12 gutter">
 
             <div class="dashboard">
-                <h3 style="padding-bottom: 20px"> 🎮 My Games 🎮 </h3>
+                <h3 style="padding-bottom: 20px" class="text-center"> 🎮 My Games 🎮 </h3>
                   <% @user.games.each do |game| %>
                     <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>
                     <% @card_title = link_to(game.title, game_path(game)) %>
@@ -23,10 +23,10 @@
             </div>
 
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-12 gutter">
+        <div class="col-md-6 col-sm-6 col-xs-12 gutter">
 
             <div class="dashboard">
-                <h3 style="padding-bottom: 20px"> ⭐️ My Rented Games ⭐️ </h3>
+                <h3 style="padding-bottom: 20px" class="text-center"> ⭐️ My Rented Games ⭐️ </h3>
                 <% @user.bookings.each do |booking| %>
                   <% @img = cloudinary_url(booking.game.photo.key) %>
                   <% @card_title = link_to(booking.game.title, game_path(booking.game)) %>
