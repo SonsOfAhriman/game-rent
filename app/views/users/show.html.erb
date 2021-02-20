@@ -37,16 +37,21 @@
           <div class="col-md-6 col-sm-6 col-xs-12">
 
               <div class="dashboard text-right">
-                  <h3 style="padding-bottom: 20px">Games I'm Renting</h3>
-                  <% @user.bookings.each do |booking| %>
-                    <% @img = cloudinary_url(booking.game.photo.key) %>
-                    <% @card_title = link_to(booking.game.title, game_path(booking.game)) %>
-                    <% @card_description = booking.game.description %>
-                    <% @card_owner = booking.game.user.username %>
-                    <%= render 'shared/card' %>
-                    <p> <strong>Rent period: </strong>  <%= booking.booking_start %> : <%= booking.booking_end %> </p>
-                    <hr>
-                  <% end %>
+                <h3 style="padding-bottom: 20px">Games I'm Renting</h3>
+                <% if @user.bookings.present? %>
+                    <% @user.bookings.each do |booking| %>
+
+                      <% @img = cloudinary_url(booking.game.photo.key) %>
+                      <% @card_title = link_to(booking.game.title, game_path(booking.game)) %>
+                      <% @card_description = booking.game.description %>
+                      <% @card_owner = booking.game.user.username %>
+                      <%= render 'shared/card' %>
+                      <p> <strong>Rent period: </strong>  <%= booking.booking_start %> : <%= booking.booking_end %> </p>
+                      <hr>
+                    <% end %>
+                <% else %>
+                  <%= link_to "Go rent some games!", games_path, class: "nav-link btn games-path" %>
+                <% end %>
               </div>
           </div>
       </div>
