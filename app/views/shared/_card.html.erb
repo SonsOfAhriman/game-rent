@@ -2,9 +2,9 @@
   <%#= game.photo.attached? ? (cl_image_tag game.photo.key) : false %>
   <img src="<%= @img %>" >
   <div class="card-product-infos">
-    <h2><%= @card_title %></h2>
+    <h2 class="truncated" style="text-overflow: ellipsis;"><%= @card_title %></h2>
     <p class="truncated" style="text-overflow: ellipsis;"><%= @card_description %></p>
-    <p>Address: <%= @card_address %></p>
-    <p>Game Owner: <%= @card_owner %></p>
+    <p class="truncated" style="text-overflow: ellipsis;">Address: <%= @card_address %></p>
+    <p class="truncated" style="text-overflow: ellipsis;">Game Owner: <%= @card_owner %></p>
   </div>
 </div>
