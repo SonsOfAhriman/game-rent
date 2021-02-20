@@ -36,11 +36,12 @@ class BookingsController < ApplicationController
             @booking.save
           end
         else
-          break
+          flash.alert = "This game is unavailable to rent during your proposed dates. Please choose another set of dates."
         end
       end
     else
       @booking.save
+
     end
 
     redirect_to game_path(@game)

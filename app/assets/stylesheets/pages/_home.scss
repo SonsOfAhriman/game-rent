@@ -8,7 +8,7 @@ h2 {
 }
 
 .home {
-  display: grid;
+  margin: 0 auto;
 }
 
 .banner {
@@ -36,8 +36,14 @@ h2 {
   background-blend-mode: multiply,multiply;
 }
 
+.bottom {
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 // img
-img {
+.homimg {
   width: 370px;
   height: 220px;
   border-radius: 5px;
@@ -45,9 +51,8 @@ img {
 
 
 .small_box {
-  width: fit-content;
-  height: auto;
-  text-align: center;
+  width: 500px;
+  height: 200px;
   padding: 30px;
   margin: 4em auto;
   border: 2px solid $white;
