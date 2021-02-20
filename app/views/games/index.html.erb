@@ -4,7 +4,7 @@
     <div class="row col-xs-12">
       <% @games.each do |game| %>
       <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <% @img = cloudinary_url(game.photo.key) %>
+        <% @img = cloudinary_url(game.photo.key) if game.photo.present? %>
         <% @card_title = link_to(game.title, game_path(game)) %>
         <% @card_address = game.address %>
         <% @card_description = game.description %>
