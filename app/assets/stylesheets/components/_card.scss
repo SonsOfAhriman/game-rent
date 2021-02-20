@@ -1,8 +1,16 @@
+a{
+  color: $grey !important;
+  &:hover{
+    text-decoration: none;
+    color: $red !important;
+  }
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px $black;
+  box-shadow: 0px 10px 5px 5px $light-gray;
   display: flex;
   align-items: center;
   margin-bottom: 2em;
