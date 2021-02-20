@@ -38,6 +38,7 @@
                       <% @card_title = link_to(booking.game.title, game_path(booking.game)) %>
                       <% @card_description = booking.game.description %>
                       <% @card_owner = booking.game.user.username %>
+                      <% @card_address = booking.game.address %>
 
                       <%= render 'shared/card' %>
                       <p> <strong>Rent period: </strong>  <%= booking.booking_start %> : <%= booking.booking_end %> </p>
