@@ -37,7 +37,7 @@ h2 {
 }
 
 // img
-img {
+.homimg {
   width: 370px;
   height: 220px;
   border-radius: 5px;
@@ -46,7 +46,7 @@ img {
 
 .small_box {
   width: fit-content;
-  height: auto;
+  height: fit-content;
   text-align: center;
   padding: 30px;
   margin: 4em auto;
