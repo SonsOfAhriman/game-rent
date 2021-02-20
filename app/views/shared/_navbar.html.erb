@@ -1,5 +1,8 @@
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% if current_user.present? %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="justify-content: space-between;">
+<% else %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="justify-content: flex-end;">
+<% end %>
   <% if current_user.present? %>
     <a class="navbar-brand" href="/">
         <%= image_tag "console.png" %>
