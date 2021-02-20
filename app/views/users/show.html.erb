@@ -1,12 +1,12 @@
 
-<div class="container" style="margin-left: 150px">
+<div class="container">
   <div class="user-dashboard">
     <h1> Hello, <%= @user.username %> </h1>
-
     <button style="margin-bottom: 20px" type="button" class="btn btn-sm"><%= link_to "Add/edit my avatar pic", edit_user_path(@user) %></button>
+    <hr>
 
-    <div class="row space-between" style="padding-top: 20px">
-        <div class="col-md-6 col-sm-6 col-xs-12 gutter">
+    <div class="row space-between">
+        <div class="col-md-6 col-sm-6 col-xs-12 gutter" style="border-right: 1px solid rgba(0,0,0,0.1);">
 
             <div class="dashboard">
                 <h3 style="padding-bottom: 20px" class="text-center"> 🎮 My Games 🎮 </h3>
